@@ -71,6 +71,7 @@ target/
 
 # pyenv
 .python-version
+*-env/
 
 # celery beat schedule file
 celerybeat-schedule
@@ -87,3 +88,6 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# vim files
+*.swp
