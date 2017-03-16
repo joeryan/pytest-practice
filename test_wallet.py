@@ -33,6 +33,10 @@ def test_wallet_spend_cash_raises_exception_on_insufficient_amount(wallet):
   with pytest.raises(InsufficientAmount):
     wallet.spend_cash(30)
 
+def test_wallet_add_cash_negative_amount_raises_error(wallet):
+  with pytest.raises(NegativeTransaction):
+    wallet.add_cash(-10)
+
 @pytest.mark.parametrize("earned,spent,expected", [
   (30, 10, 20),
   (20, 2, 18),
