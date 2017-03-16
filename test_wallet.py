@@ -1,7 +1,7 @@
 # test_wallet.py
 
 import pytest
-from wallet import Wallet, InsufficientAmount
+from wallet import Wallet, InsufficientAmount, NegativeTransaction
 
 @pytest.fixture
 def empty_wallet():
