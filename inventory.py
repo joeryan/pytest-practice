@@ -11,3 +11,7 @@ def displayInventory(inv):
 		itemCount += inv[k]
 	output += "\nTotal number of items: {count}\n".format(count = itemCount)
 	return output
+
+def addToInventory(inv, items):
+	for item in items:
+		inv[item] = inv[item] + 1 if item in inv.keys() else 1

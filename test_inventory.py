@@ -31,3 +31,56 @@ Total number of items: 62
 				'gold coin': 42}
 	actual = inv.displayInventory(testInv)
 	assert expected == actual
+
+def test_add_empty_hoard_to_inventory():
+	hoard = []
+	testInv = {'arrow': 12,
+				'gold coin': 2,
+				'dagger': 1}
+	expected = """\
+Inventory:
+12 arrow
+1 dagger
+2 gold coin
+
+Total number of items: 15
+"""
+	inv.addToInventory(testInv, hoard)
+	actual = inv.displayInventory(testInv)
+	assert expected == actual
+
+def test_add_single_item_hoard_to_inventory():
+	hoard = ['necklace']
+	testInv = {'arrow': 12,
+				'gold coin': 2,
+				'dagger': 1}
+	expected = """\
+Inventory:
+12 arrow
+1 dagger
+2 gold coin
+1 necklace
+
+Total number of items: 16
+"""
+	inv.addToInventory(testInv, hoard)
+	actual = inv.displayInventory(testInv)
+	assert expected == actual	
+
+def test_add_multiple_item_hoard_to_inventory():
+	hoard = ['necklace', 'gold coin', 'gold coin']
+	testInv = {'arrow': 12,
+				'gold coin': 2,
+				'dagger': 1}
+	expected = """\
+Inventory:
+12 arrow
+1 dagger
+4 gold coin
+1 necklace
+
+Total number of items: 18
+"""
+	inv.addToInventory(testInv, hoard)
+	actual = inv.displayInventory(testInv)
+	assert expected == actual	
